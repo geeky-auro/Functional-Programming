@@ -35,6 +35,9 @@ public class FP01Exercise {
          * Print Courses Whose Name has atleast 4 letters
          *
          *
+         * Exercise 5:-
+         *
+         * Print the length of each string
          * */
         List<String> course=new ArrayList<String>();
         course.add("Spring");
@@ -52,7 +55,7 @@ public class FP01Exercise {
         new FP01Exercise().courses(course);
         new FP01Exercise().selectSpring(course);
         new FP01Exercise().atleast4(course);
-
+        new FP01Exercise().leng(course);
          }
 
          private void oddNums(List<Integer> nums){
@@ -70,6 +73,12 @@ public class FP01Exercise {
 
          private void atleast4(List<String> course){
              course.stream().filter(str->(str.length()>=4)).forEach(System.out::println);
+
+         }
+
+         private void leng(List<String> course){
+
+            course.stream().map(String::length).forEach(System.out::println);
 
          }
 

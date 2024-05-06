@@ -17,6 +17,8 @@ public class FP01Structured {
         printAllNumbersInListStructures(list);
         System.out.println();
         printEvenNumbersInListStructures(list);
+        System.out.println();
+        printSquares(list);
     }
 
     private static void printAllNumbersInListStructures(List<Integer> list) {
@@ -35,4 +37,11 @@ public class FP01Structured {
         }
 
     }
+
+    private static void printSquares(List<Integer> nos){
+        for(int x:nos){
+            System.out.println(x*x);
+        }
+    }
+
 }

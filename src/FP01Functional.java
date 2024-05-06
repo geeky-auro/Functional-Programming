@@ -16,6 +16,8 @@ public class FP01Functional {
 
         printAllNumbersInListFunctional(list);
         printEvenNumbersInListFunctional(list);
+        System.out.println();
+        printsquares(list);
     }
 
     private static void printAllNumbersInListFunctional(List<Integer> list) {
@@ -64,6 +66,15 @@ public class FP01Functional {
         // number -> number % 2
         list.stream().filter(number -> number%2==0).forEach(System.out::println);
     }
+
+    private static void printsquares(List<Integer> nos){
+        nos.stream().map(num->num*num).forEach(System.out::println);
+    }
+
+    private static  void printCubes(List<Integer> nos){
+        nos.stream().map(no->no*no*no).forEach(System.out::println);
+    }
+
 
     private  static void print(int number){
         System.out.println(number);
