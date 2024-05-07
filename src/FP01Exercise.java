@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP01Exercise {
 
@@ -56,6 +57,7 @@ public class FP01Exercise {
         new FP01Exercise().selectSpring(course);
         new FP01Exercise().atleast4(course);
         new FP01Exercise().leng(course);
+
          }
 
          private void oddNums(List<Integer> nums){
@@ -81,5 +83,7 @@ public class FP01Exercise {
             course.stream().map(String::length).forEach(System.out::println);
 
          }
+
+
 
 }

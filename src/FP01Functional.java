@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP01Functional {
 
@@ -65,6 +66,18 @@ public class FP01Functional {
         // To simplify it we use lambda Function!
         // number -> number % 2
         list.stream().filter(number -> number%2==0).forEach(System.out::println);
+
+        // Create another list after performing each operation on the elements of a given list
+        List<Integer> doubleNum=doubleList(list);
+
+        System.out.println(doubleNum);
+
+
+    }
+
+    private static List<Integer> doubleList(List<Integer> list) {
+        // With the help of Collect method we collect all the elements from the list and create another list!
+        return list.stream().map(num->num*num).collect(Collectors.toList());
     }
 
     private static void printsquares(List<Integer> nos){

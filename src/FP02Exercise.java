@@ -2,6 +2,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FP02Exercise {
 
@@ -59,6 +60,10 @@ public class FP02Exercise {
         // SOrt the numbers
         sort_the_no(list);
         sort_the_no_descending(list);
+
+        System.out.println();
+        System.out.println(new FP02Exercise().create_even_no_ist(list));
+        System.out.println(create_len_list(course));
     }
 
     private static int sum(int aggregate,int nextnumber){
@@ -135,6 +140,15 @@ public class FP02Exercise {
         for(int x:nos){
             System.out.println(x*x);
         }
+    }
+
+
+    private List<Integer> create_even_no_ist(List<Integer> no){
+        return no.stream().filter(t->t%2==0).collect(Collectors.toList());
+    }
+
+    private static List<Integer> create_len_list(List<String> str){
+        return str.stream().map(t->t.length()).collect(Collectors.toList());
     }
 
 }
