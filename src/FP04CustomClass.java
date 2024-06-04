@@ -108,6 +108,17 @@ public class FP04CustomClass {
 
         // Skip ,limit, takeWhile and dropWhile
 
+        // Task : Pick the Top 5 Courses
+        System.out.println(list.stream().sorted(comparatorByNoOfStudentsDecreasing).limit(5).collect(Collectors.toList()));
+
+        // Task : Skip the Top 3 Results
+        System.out.println(list.stream().sorted(compareByStudentsandReviews).skip(3).collect(Collectors.toList()));
+
+        // Task : Take all elements until we get an element  whose review score is less than 95 ;
+
+
+
+
 
 
     }
