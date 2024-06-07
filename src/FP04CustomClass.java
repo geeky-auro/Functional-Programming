@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -117,8 +118,31 @@ public class FP04CustomClass {
         // Task : Take all elements until we get an element  whose review score is less than 95 ;
 
 
+//    list.stream().dropWhile(c->true);
+
+        System.out.println(list.stream()
+                .filter(reviewScoreLessThan90)
+                .min(comparatorByNoOfStudents));
+
+        // Average No. of reviews having greater than 95 on courses!
+        System.out.println(
+                list.stream()
+                        .filter(reviewScoreGreaterThan95)
+                        .mapToInt(Course::getNoOfStudents).average()
+        );
 
 
+        /*
+            .mapToInt(Course::getNoOfStudents)
+            is equivalent to
+            map(course->course.getNoOfStudents())
+         */
+
+        System.out.println(LocalDate.now());
+        System.out.println(list);
+
+        System.out.println(list.stream().collect(Collectors.groupingBy(Course::getCategory,Collectors.counting()))
+);
 
 
     }
