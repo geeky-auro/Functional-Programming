@@ -59,7 +59,12 @@ class Course {
 }
 
 public class FP04CustomClass {
+    public static void test(){
+        System.out.println("Test FUnction!");
+    }
+
     public static void main(String[] args) {
+        test();
         List<Course> list = new ArrayList<>();
         list.add(new Course("Spring", "Framework", 98, 20000));
         list.add(new Course("Micro Services", "Micro Services", 95, 20000));
@@ -172,7 +177,6 @@ public class FP04CustomClass {
         // Appending each element of first list to all the element of second list typically an order on N^2 approach!
         System.out.println(courses.stream()
                 .flatMap(c->arrr1.stream().map(c2->List.of(c,c2))).toList());
-
 
 
 
